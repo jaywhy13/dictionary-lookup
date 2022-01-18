@@ -1,0 +1,17 @@
+{
+  "name": "dictionary-lookup",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "author": "Jean-Mark Wright",
+  "license": "MIT",
+  "dependencies": {
+    "@notionhq/client": "^0.4.12",
+    "axios": "^0.24.0",
+    "dotenv": "^14.2.0",
+    "prompt-confirm": "^2.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
