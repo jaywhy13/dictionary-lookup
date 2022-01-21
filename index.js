@@ -88,11 +88,17 @@ async function getWordDefinition(word) {
         result.lexicalEntries.forEach((lexicalEntry) => {
             let lexicalCategory = lexicalEntry.lexicalCategory.id;
             lexicalEntry.entries.forEach((entry) => {
-                entry.senses.forEach(sense => {
-                    const definitions = sense.definitions;
-                    const examples = sense.examples.map(example => example.text);
-                    results.push({ wordType: lexicalCategory, definitions, examples })
-                })
+                (entry.senses || []).forEach((sense) => {
+                  const definitions = sense.definitions;
+                  const examples = (sense.examples || []).map(
+                    (example) => example.text
+                  );
+                  results.push({
+                    wordType: lexicalCategory,
+                    definitions,
+                    examples,
+                  });
+                });
             })
         })
     })
